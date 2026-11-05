@@ -1,109 +1,59 @@
 import React from 'react'
+import ProductCard from './Component/ProductCard/ProductCard'
+import WspContactOption from './Component/WspContactOption/WspContactOption'
+
+
+/* 
+
+crear  el  componente WspContactOption
+
+Recibira:
+
+nombre:  string
+ultimo_mensaje: string
+fecha string
+cantidad_memsajes_no_leidos: number
+
+
+e  instanciarlo 3  veces en el App component
+*/
 
 export default function App() {
-
-  
   return (
     <div>
       <h1>Hola mundo</h1>
-      <button>click</button>
-      <LoginForm/>
-      <ProductCard titulo='Tv samsung 50"' precio={2000} descripcion='Todavia no' descuento={10}/>
-      <ProductCard titulo='Mesa ratona' precio={400} descripcion='Todavia no' descuento={0}/>
-      <ProductCard titulo='vaso cristal' precio={10} descripcion='Todavia no' descuento={20}/>
-      <ProductCardV2 titulo='vaso cristal' precio={10} descripcion='Todavia no' descuento={20}/>
-    </div>
-  )
-}
+      <ProductCard
+      titulo={"TV samsung 42"}
+      descripcion={'lorem'}
+      precio={200}
+       />
+       <ProductCard
+        titulo={"Mesa ratona"}
+      descripcion={'lorem 2'}
+      precio={20}
+      />
+     <WspContactOption
+        nombre="dani"
+        ultimo_mensaje="Hola"
+        fecha="22:40"
+        cantidad_mensajes_no_leidos={0}
+      />
 
-/* 
-JSX es lenguaje que permite la combinacion de estructuras y sintaxis de JS y HTML
-JSX trae como caracteristica nueva el tipo de dato JSX, es lo que veremos como "html"
-En JSX existen los componentes, los componentes sirven para mostrar/renderizar fragmentos de nuesta aplicacion.
-Un componente es una funcion que retorna JSX/HTML
-Por buenas practicas un componente se nombra en mayuscula EJ: App, Button, Header, RegisterForm, ProductList
-Un componente para poder utilizarlo lo debemos Instanciar
-
-React nos permite separar nuestra pagina en componentes, la idea es la misma que una linea de montaje
-*/
-
-
-function MyComponent (){
-  return (
-    <div>Hola soy un componente</div>
-  )
-}
-
-function LoginForm (){
-  return (
-    <form>
-      <div>
-        <label>Email:</label>
-        <input type='email' />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type='password' />
-      </div>
-      <button>Inciar sesion</button>
-    </form>
-  )
-}
-
-/* 
-TODO COMPONENTE recibe unas propiedades por parametro
-Las propiedades siempre seran de tipo de dato objeto 
-Las propiedades seran pasadas en instancia del componente
-*/
-
-function ProductCard ( propiedades ){
-  console.log('Propiedades:', propiedades)
-
-  let precio_con_descuento = propiedades.precio - propiedades.precio * ((propiedades.descuento / 100))
-
-  let span_descuento = null
-  if(propiedades.descuento > 0){
-    span_descuento = <span>({propiedades.descuento}% OFF)</span>
-  }
-  return (
-    <div>
-      <hr/>
-      <h2>{propiedades.titulo}</h2>
-      <p>{propiedades.descripcion}</p>
-      <span>Precio: ${precio_con_descuento} ARS {span_descuento}</span>
-      <button>Comprar</button>
-    </div>
-  )
-}
-
-function ProductCardV2 ( propiedades ){
-  console.log('Propiedades:', propiedades)
-
-  let precio_con_descuento = propiedades.precio - propiedades.precio * ((propiedades.descuento / 100))
-
-  let span_descuento = null
-  if(propiedades.descuento > 0){
-    span_descuento = <span>({propiedades.descuento}% OFF)</span>
-  }
-  return (
-    <div>
-      <hr/>
-      <h2>{propiedades.titulo}</h2>
-      <p>{propiedades.descripcion}</p>
-      <span>Precio: ${precio_con_descuento} ARS {span_descuento}</span>
+      <WspContactOption
+        nombre="ignacio"
+        ultimo_mensaje="Hola 2"
+        fecha="18:58"
+        cantidad_mensajes_no_leidos={5}
+      />
+      <WspContactOption
+        nombre="mili"
+        ultimo_mensaje="Hola 3"
+        fecha="16:30"
+        cantidad_mensajes_no_leidos={1}
+      />
+       
       
-    </div>
+      </div>
+      
   )
 }
-
-/* 
-function saludar (nombre){
-  console.log("Hola " + nombre)
-  return 1
-}
- */
-
-/* 
-JSX es una sintaxis nueva que permite usar HTML dentro de JS
-En JSX existe un nuevo tipo de dato llamado JSXElement, un JSXElement es basicamente un elemento de HTML en JS
-*/
