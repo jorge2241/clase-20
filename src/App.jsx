@@ -1,6 +1,8 @@
 import React from 'react'
 import ProductCard from './Component/ProductCard/ProductCard'
 import WspContactOption from './Component/WspContactOption/WspContactOption'
+import Counter from './Component/Counter/Counter'
+import LuzPrendida from './Component/LuzPrendida/LuzPrendida'
 
 
 /* 
@@ -36,7 +38,7 @@ export default function App() {
         nombre="dani"
         ultimo_mensaje="Hola"
         fecha="22:40"
-        cantidad_mensajes_no_leidos={0}
+        cantidad_mensajes_no_leidos={2}
       />
 
       <WspContactOption
@@ -51,9 +53,16 @@ export default function App() {
         fecha="16:30"
         cantidad_mensajes_no_leidos={1}
       />
-       
+       <Counter/>
+
+       <LuzPrendida/>
+  
       
       </div>
       
   )
 }
+
+
+
+  
