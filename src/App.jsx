@@ -5,6 +5,7 @@ export default function App() {
     <div>
       <h1>Hola mundo</h1>
       <button>click</button>
+      <button>touch</button>
       
     </div>
     )
