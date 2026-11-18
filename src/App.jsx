@@ -10,11 +10,18 @@ export default function App() {
 
   return (
     <div>
+<<<<<<< HEAD
            
      <FormAltaProducto/>
       <Messages/>
       <LoginForm/>
       <Tarea/>
+=======
+      <h1>Hola mundo</h1>
+      <button>click</button>
+      <button>touch</button>
+      
+>>>>>>> 39925678bf3ca466792b77a65c530c8e4d31a7cc
     </div>
   )
 }
